@@ -1,0 +1,18 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT system_module_2:app
+
+runtime_config:
+  python_version: 3
+
+beta_settings:
+  cloud_sql_instances: project-api-engine-01:us-central1:db-inst-01=tcp:5432
+
+#env_variables:
+#  INSTANCE_CONNECTION_NAME: project-api-engine-01:us-central1:db-inst-01
+#  DB_USER: postgres
+#  DB_PASS: prueba1234
+#  DB_NAME: db_py
+#
+#  # TCP connection setup; remove if using a Unix domain socket instead
+#  DB_HOST: 172.17.0.1:5432
